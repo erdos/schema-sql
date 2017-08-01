@@ -104,7 +104,6 @@
     ;:else {:$unexpected! {[schema-name prefix-name key-object] value-object}}
     ))
 
-;(table-name MobyPolicy)
 
 (defn create-schema-command
   ([schema] (create-schema-command (table-name schema) nil schema))
@@ -155,7 +154,6 @@
 
 
 (defn schema->sql [schema] (-> schema create-schema-command schema-command->sql))
-;; (table-name (str (sc/schema-name MobyPolicy)))
 
 ;; TODO: handle optional keys
 ;; TODO: handle any keys.
@@ -163,10 +161,6 @@
 ;; TODO: handle related types (when given with var)  or submaps
 ;; TODO: handle recursive types (later)
 ;; TODO: handle schema extensions (:type, etc)
-
-;(require '[fins.default-config :refer [MobyPolicy]])
-;(clojure.pprint/pprint (schema->sql-map MobyPolicy))
-
 
 ;; TODO:
 ;; maybe, enum, eq, pred, conditional, (if), cond-pre, constrained
